@@ -5,10 +5,7 @@ import com.ironhack.priceproxyservice.controller.interfaces.PriceController;
 import com.ironhack.priceproxyservice.service.interfaces.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 
@@ -19,7 +16,7 @@ public class PriceControllerImpl implements PriceController {
 
     @PostMapping("/prices")
     @ResponseStatus(HttpStatus.OK)
-    public Money convert(@RequestParam Money moneyUSD, @RequestParam String currency) {
+    public Money convert(@RequestBody Money moneyUSD, @RequestParam String currency) {
 
         return priceService.convert(moneyUSD,currency);
     }

@@ -3,6 +3,8 @@ package com.ironhack.productproxyservice.model;
 import com.ironhack.productproxyservice.Enum.Currency;
 
 import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -11,7 +13,7 @@ public class Money {
 
         private static final Currency USD = Currency.USD;
         private static final RoundingMode DEFAULT_ROUNDING = RoundingMode.HALF_EVEN;
-
+        @Enumerated(EnumType.STRING)
         private  Currency currency;
         private BigDecimal amount;
 
