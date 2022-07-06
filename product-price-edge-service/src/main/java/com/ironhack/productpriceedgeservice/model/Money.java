@@ -2,11 +2,11 @@ package com.ironhack.productpriceedgeservice.model;
 
 import com.ironhack.productpriceedgeservice.Enum.Currency;
 
-import javax.persistence.Embeddable;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-@Embeddable
+
 public class Money {
 
         private static final Currency USD = Currency.USD;
