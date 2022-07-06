@@ -1,31 +1,18 @@
-package com.ironhack.productproxyservice.model;
+package com.ironhack.productpriceedgeservice.controller.DTO;
 
-import javax.persistence.*;
+import com.ironhack.productpriceedgeservice.model.Money;
 
-@Entity
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class ProductPriceDTO {
     private String productName;
 
-    @Embedded
     private Money price;
 
-    public Product() {
+    public ProductPriceDTO() {
     }
 
-    public Product(String productName, Money price) {
+    public ProductPriceDTO(String productName, Money price) {
         this.productName = productName;
         this.price = price;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getProductName() {
